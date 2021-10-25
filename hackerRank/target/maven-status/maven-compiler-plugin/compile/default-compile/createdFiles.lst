@@ -1,0 +1,8 @@
+com\wolk\hackerRank\entity\HackerRankUserEntity.class
+com\wolk\hackerRank\service\RegistrationService.class
+com\wolk\hackerRank\dao\RegistrationDAO.class
+com\wolk\hackerRank\Tester.class
+com\wolk\hackerRank\service\RegistrationServiceImpl.class
+com\wolk\hackerRank\dto\hackerRank.class
+com\wolk\hackerRank\dao\RegistrationDAOImpl.class
+com\wolk\hackerRank\util\HibernateUtil.class

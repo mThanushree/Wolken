@@ -1,28 +1,105 @@
 package com.wolk.hackerRank.service;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import java.util.Objects;
+import java.util.Scanner;
 
 import com.wolk.hackerRank.dao.RegistrationDAO;
 import com.wolk.hackerRank.dao.RegistrationDAOImpl;
-import com.wolk.hackerRank.dto.hackerRank;
+import com.wolk.hackerRank.dto.LoginDTO;
+import com.wolk.hackerRank.dto.UserDTO;
 import com.wolk.hackerRank.entity.HackerRankUserEntity;
-import com.wolk.hackerRank.util.HibernateUtil;
+import com.wolk.hackerRank.entity.HackerRankLoginEntity;
+
 
 public class RegistrationServiceImpl implements RegistrationService {
-	RegistrationDAO dao=new RegistrationDAOImpl();
-	public String validateAndSave(hackerRank dto) {
-		HackerRankUserEntity entity=new HackerRankUserEntity();
-		entity.setId(dto.getId());
-		entity.setName(dto.getName());
-		entity.setEmail(dto.getEmail());
-		entity.setPassword(dto.getPassword());
-		entity.setContact(dto.getContact());
-		
-		int rows=dao.save(entity);
-		System.out.println(rows);
-		return null;
-	
+Scanner scanner=new Scanner(System.in);
+RegistrationDAO dao=new RegistrationDAOImpl();
+public String validateAndSave(UserDTO dto) {
+	HackerRankUserEntity entity=new HackerRankUserEntity();
+	if(dto.getId()>0) {
+		if(!dto.getUsername().equals(null) && !dto.getUsername().equals("")) {
+			if(!dto.getEmail().equals(null) && !dto.getEmail().equals("")) {
+				if(dto.getContactNumber()>5999999999l && dto.getContactNumber()<9999999999l) {
+					if(dto.getPassword().equals(dto.getCnfpassword()) ) {
+						entity.setId(dto.getId());
+						entity.setName(dto.getUsername());
+						entity.setEmail(dto.getEmail());
+						entity.setContactNumber(dto.getContactNumber());
+						entity.setPassword(dto.getPassword());
+						
+						int rows = dao.save(entity);
+						if(rows>0) {
+							return "Data Saved";
+						}else {
+							return "Data not saved";
+						}
+						
+					}else{
+						return "Password and confirm password has to be same";
+					}
+				}else{
+					return "Please provide valid phone number";
+				}
+			}else{
+				return "Please provide valid Email Id";
+			}
+		}else{
+			return "Please enter username";
 		}
+	}else{
+		return "Please provide valid Id";
+	}
+	
+}
+
+public String validateandLogin(LoginDTO loginDTO) {
+	if(!Objects.isNull(loginDTO)) {
+		if(!loginDTO.getEmail().equals(null) && !loginDTO.getEmail().equals("")) {
+			HackerRankLoginEntity entity=dao.getByEmail(loginDTO.getEmail());
+			if(loginDTO.getPassword().equals(entity.getPassword())) {
+				return "Login Sucessfull";
+			}else {
+				return "Enter valid Password";
+			}
+		}else {
+			return "Enter valid Email";
+		}
+	}else {
+		return "Object is null";
+	}
+	
+}
+
+
+
+public String validateandUpdatePassword(LoginDTO loginDTO) {
+
+	if(!loginDTO.getEmail().equals(null) && !loginDTO.getEmail().equals("")) {
+		HackerRankLoginEntity entity=dao.getByEmail(loginDTO.getEmail());
+		if(entity!=null) {
+		System.out.println("Enter Password");
+		String password=scanner.nextLine();
+		System.out.println("Enter confirm Password");
+		String repassword=scanner.nextLine();
+			if(password.equals(repassword)) {
+				entity.setEmail(loginDTO.getEmail());
+				entity.setPassword(password);
+				
+				int isUpdate=dao.forgotPassword(entity);
+				if(isUpdate>0) {
+					return "Password Updated";
+					
+				}else {
+					return "Password not Updated";
+				}
+			}else{
+				return "Password and confirm password has to be same";
+			}
+		}else {
+			return "Enter valid Email";
+		}
+	}else {
+		return "Enter valid Email";
+	}
+}
 }

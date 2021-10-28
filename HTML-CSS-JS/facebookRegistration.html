@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="validation.js"></script>
+</head>
+<body>
+    <header>
+        <div class="card-header bg-primary postion-fixed">
+            <div class="row">
+                <div class="col">
+                    <h3 class="font-weight-bold">Facebook</h3>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-dark side">Login</button>
+                </div>
+            </div> 
+        </div>
+    </header>
+    
+    
+    <div class="container down">
+        <div class="row">
+            <div class="col-md-5 col-12">
+
+                <img src="https://media.istockphoto.com/photos/cropped-image-of-latin-girl-working-on-laptop-picture-id1202273383?k=20&m=1202273383&s=612x612&w=0&h=i9wV8CWeo5cPQFW9cgPDw46XaSy7MlbsIK2CWNBZRwI=" >
+            </div>
+            <div class="col-md-7 col-12 border">
+                <h3 class="head">Registration</h3>
+                <form action="">
+                    <div class="row">
+                        <div class="col-3"><label>Full name</label></div>
+                        <div class="col"><input type="text" class="form-control form-control-sm" name="username" placeholder="Enter your name"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>Email</label></div>
+                        <div class="col"><input type="email" class="form-control form-control-sm" id="email" placeholder="Enter your email" onblur="validateEmail()"></div>
+                        <div class="col"><label id="msg"></label></div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-3"><label>Contact Number</label></div>
+                        <div class="col"><input type="tel" class="form-control form-control-sm" name="contact" placeholder="Enter your contact number"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>Date of birth</label></div>
+                        <div class="col"><input type="date" class="form-control form-control-sm" name="date" placeholder="Date of birth"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>Gender</label></div>
+                            <div class="col">
+                                <input type="radio" id="gender1" name="gender" value="male">
+                                <label for="contactChoice1">Male</label>
+                                <input type="radio" id="gender2" name="gender" value="female">
+                                <label for="contactChoice2">Female</label>
+                                <input type="radio" id="gender3" name="gender" value="others">
+                                <label for="contactChoice3">Others</label><br>
+                            </div>    
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>Status</label></div>
+                        <div class="col">
+                            <input type="checkbox" id="relationship1" name="relationship1" value="single">
+                            <label for="relationship1"> Single</label>
+                            <input type="checkbox" id="relationship2" name="relationship2" value="married">
+                            <label for="relationship2"> Married</label>
+                            <input type="checkbox" id="relationship3" name="relationship3" value="divorced">
+                            <label for="relationship3"> Divorced</label><br>
+                        </div>    
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>City</label></div>
+                        <div class="col"><input type="text" class="form-control form-control-sm" name="city" placeholder="Enter your city"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>Nationality</label></div>
+                        <div class="col"><select class="form-control form-control-sm">
+                            <option>India</option>
+                            <option>England</option>
+                            <option>USA</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>Password</label></div>
+                        <div class="col"><input type="password" class="form-control form-control-sm" name="password" placeholder="Enter password"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3"><label>Confirm Password</label></div>
+                        <div class="col"><input type="password" class="form-control form-control-sm" name="cnfpassword" placeholder="Confirm Password"></div>
+                    </div>
+                    <div class="row bottom">
+                        <div class="col-6"><button type="button" class="btn btn-outline-success size" onclick="validateSubmission()">Register</button></div>
+                        <div class="col-5"><button type="reset" class="btn btn-outline-info size">Reset</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer footer bg-dark">
+        <h6 class="font">@Copyright Reserved 2021</h6>
+      </div>
+</body>
+</html>

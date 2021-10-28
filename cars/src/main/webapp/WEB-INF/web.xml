@@ -1,0 +1,99 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+  	<servlet-name>benz</servlet-name>
+  	<servlet-class>com.wolk.cars.BenzServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>bmw</servlet-name>
+  	<servlet-class>com.wolk.cars.BMWServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>kia</servlet-name>
+  	<servlet-class>com.wolk.cars.KiaServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>lamborghini</servlet-name>
+  	<servlet-class>com.wolk.cars.LamborghiniServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>mahindra</servlet-name>
+  	<servlet-class>com.wolk.cars.MahindraServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>maruti</servlet-name>
+  	<servlet-class>com.wolk.cars.MarutiServlet</servlet-class>
+  </servlet>
+  
+   <servlet>
+  	<servlet-name>swift</servlet-name>
+  	<servlet-class>com.wolk.cars.SwiftServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>tata</servlet-name>
+  	<servlet-class>com.wolk.cars.TataMotorsServlet</servlet-class>
+  </servlet>
+  
+    <servlet>
+  	<servlet-name>toyato</servlet-name>
+  	<servlet-class>com.wolk.cars.ToyatoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>benz</servlet-name>
+  	<url-pattern>/benz cars</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>bmw</servlet-name>
+  	<url-pattern>/bmw cars</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>kia</servlet-name>
+  	<url-pattern>/kia cars</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>lamborghini</servlet-name>
+  	<url-pattern>/lamborghini cars</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>mahindra</servlet-name>
+  	<url-pattern>/mahindra cars</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>maruti</servlet-name>
+  	<url-pattern>/maruti cars</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+  	<servlet-name>swift</servlet-name>
+  	<url-pattern>/swift cars</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>tata</servlet-name>
+  	<url-pattern>/tata cars</url-pattern>
+  </servlet-mapping>
+  
+    
+  <servlet-mapping>
+  	<servlet-name>toyato</servlet-name>
+  	<url-pattern>/toyato cars</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

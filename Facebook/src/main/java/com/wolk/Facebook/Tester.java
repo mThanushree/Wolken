@@ -13,9 +13,10 @@ public class Tester {
 	static Scanner sc=new Scanner(System.in);
 	public static void main(String[] args) throws ParseException
 	{
-		RegistrationService service=new RegistrationServiceImpl();
 		
+		RegistrationService service=new RegistrationServiceImpl();
 		UserDTO dto=new UserDTO();
+		
 		System.out.println("enter id");
 		int id=sc.nextInt();
 		sc.nextLine();
